@@ -4,32 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time Quiz</title>
-    <link rel="stylesheet" href="./stylesheet.css" />
+    <link rel="stylesheet" href="./Assets/css/stylesheet.css" />
   </head>
 
-<html>
     <body>
-        <div class="codingquiz">
-        <h1> Coding Quiz Challenge</h1>
-            <h2>You have 75 seconds to answer 6 questions. Your best score will be counted on the leaderboard.</h2>
+
+      <div class="highscores">High Scores</div>
+      <div class="timer" id="timer">Time:<span id="time"></span></div>
+
+
+         <div class="wrap">
+             <div class="quizinfo" id="quizinfo">
+                 <h1>Coding Quiz Challenge</h1>
+                     <p>
+                         You have 90 seconds to answer 6 questions. Your best score will be
+                         counted on the leaderboard.
+                     </p>
+                <button class="startquiz" id="startbutton">Start Quiz</button>
           </div>
+    
+         <div class="hide" id="questions">
+            <h2 id="question-name"></h2>
+            <div class="choices" id="choices"></div>
+         </div>
+
+        <div id="ending-quiz" class="hide">
+             <h2>Finished</h2>
+             <h2>Final Score <span id="final-score"></span> </h2>
+             <h3>Enter Initials <input type="text" id="initials"/></h3>
+             <button id="submit">Submit</button>
+        </div>
+
+    <div class="feedback-wrong" id="feedback"></div>
+    </div>
+
+    
+
+     
 
 
 
-            <button class="startquiz">Start Quiz</button>
-            <div class="highscores">High Scores</div>
-            <div class="timer"></div>
-        
-        
-            
-            
-
-       
-
-
-
-
-        <script src="./Assets/js/script.js"></script>
-        <script src="./Assets/js/questions.js"></script>
+      <script src="./Assets/js/question.js"></script>
+      <script src="./Assets/js/script.js"></script>
+    
     </body>
+  </html>
 </html>
