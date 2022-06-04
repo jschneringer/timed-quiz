@@ -3,50 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Time Quiz</title>
+    <title>Timed Quiz</title>
     <link rel="stylesheet" href="./Assets/css/stylesheet.css" />
 
   </head>
+    
+  <header id="title">Timed Quiz</header>
+  
+  <div id="rules">You have 2 minutes to complete the six question quiz.</div>
+
+    <div id="time-reminder">
+    <h2>Time till quiz closes <span id="time">2:00</span> minutes!</h2>
+  </div>
 
     <body>
+         
 
-      <div class="highscores">High Scores</div>
-      
-      <div>You have <span id="time">02:00</span> minutes to complete this test.</div>
-
-
-         <div class="wrap">
-             <div class="quizinfo" id="quizinfo">
-                 <h1>Coding Quiz Challenge</h1>
-                     <p>
-                         You have 2 minutes to answer 6 questions. Your best score will be
-                         counted on the leaderboard.
-                     </p>
-                <button class="startquiz" id="startbutton">Start Quiz</button>
+      <div class="container">
+        <div id="question-container" class="hide">
+          <div id="question">Question</div>
+          <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
           </div>
-    
-         <div class="hide" id="questions">
-            <h2 id="question-name"></h2>
-            <div class="choices" id="choices"></div>
-         </div>
-
-
-
-
-        <div id="ending-quiz" class="hide">
-             <h2>Finished</h2>
-             <h2>Final Score <span id="final-score"></span> </h2>
-             <h3>Enter Initials <input type="text" id="initials"/></h3>
-             <button id="submit">Submit</button>
         </div>
-
-             <div class="feedback-wrong" id="feedback"></div>
-          </div>
-
-    
-
-      <script src="./Assets/js/question.js"></script>
+        <div class="controls">
+          <button id="start-btn" class="start-btn btn">Start</button>
+          <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+      </div>
+            
+           
+  
       <script src="./Assets/js/script.js"></script>
+    
     
     </body>
   </html>
