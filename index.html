@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time Quiz</title>
     <link rel="stylesheet" href="./Assets/css/stylesheet.css" />
+
   </head>
 
     <body>
 
       <div class="highscores">High Scores</div>
-      <div class="timer" id="timer">Time:<span id="time"></span></div>
+      
+      <div>You have <span id="time">02:00</span> minutes to complete this test.</div>
 
 
          <div class="wrap">
              <div class="quizinfo" id="quizinfo">
                  <h1>Coding Quiz Challenge</h1>
                      <p>
-                         You have 90 seconds to answer 6 questions. Your best score will be
+                         You have 2 minutes to answer 6 questions. Your best score will be
                          counted on the leaderboard.
                      </p>
                 <button class="startquiz" id="startbutton">Start Quiz</button>
@@ -28,6 +30,9 @@
             <div class="choices" id="choices"></div>
          </div>
 
+
+
+
         <div id="ending-quiz" class="hide">
              <h2>Finished</h2>
              <h2>Final Score <span id="final-score"></span> </h2>
@@ -35,14 +40,10 @@
              <button id="submit">Submit</button>
         </div>
 
-    <div class="feedback-wrong" id="feedback"></div>
-    </div>
+             <div class="feedback-wrong" id="feedback"></div>
+          </div>
 
     
-
-     
-
-
 
       <script src="./Assets/js/question.js"></script>
       <script src="./Assets/js/script.js"></script>

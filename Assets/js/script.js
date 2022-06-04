@@ -15,12 +15,12 @@ var feedback = document.getElementById("feedback");
 
 //clicking button to start quiz
 function startQuiz() {
-  var startButton = document.getElementById("quizinfo");
-  startButton.setAttribute("class", "hide");
+  var startScreen = document.getElementById("quizinfo");
+  startScreen.setAttribute("class", "hide");
  
   questions.removeAttribute("class");
 
-  timerId = setInterval(clockTick, 1000);
+  //timerId = setInterval(timer, 1000);
 
 timer.textContent = time;
 
@@ -32,7 +32,7 @@ timer.textContent = time;
 function nextQuestion() {
   var currentQuestion = questions[currentQuestionIndex];
 
-  var title = document.getElementById("questions");
+  var title = document.getElementById("question-name");
   title.textContent = currentQuestion;   //DEBUG
 
   choices.innerHTML = "";
@@ -52,35 +52,6 @@ function nextQuestion() {
   });
 }
 
-function selectQuestion() {
-  if (this.value !== questions [currentQuestionIndex].answer) {
-    time-+15;
-
-    if (time< 0) {
-      time = 0;
-    }
-    timer.textContent=time;
-
-    feedback.textContent = "Wrong!"
-    }
-     else {
-       feedback.textContent = "Correct!";
-     }
-
-      feedback.setAttribute("class", "feeback");
-      setTimeout(function() {
-        feedback.setAttribute("class", "feedback hide");
-      }, 1000);
-
-      currentQuestionIndex++;
-
-      if (currentQuestionIndex === questions.length) {
-        quizEnd();
-      } else {
-        getQuestion();
-      }
-    }
-
 function quizEnd() {
   clearInterval(timerId);
 
@@ -94,16 +65,6 @@ function quizEnd() {
 
 }
 
-function clockTick() {
-  // update time
-  time--;
-  timerId.textContent = time;
-
-  // check if user ran out of time
-  if (time <= 0) {
-    quizEnd();
-  }
-}
 
 function saveHighscore () {
   var initials = initials.value.trim();
@@ -135,3 +96,26 @@ function checkForEnter (event) {
 startButton.onclick = startQuiz;
 
 initials.onkeyup = checkForEnter;
+
+function startTimer(duration, display) {
+  var timer = duration, minutes, seconds;
+  setInterval(function () {
+      minutes = parseInt(timer / 60, 10)
+      seconds = parseInt(timer % 60, 10);
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = minutes + ":" + seconds;
+
+      if (--timer < 0) {
+          timer = duration;
+      }
+  }, 1000);
+}
+
+window.onload = function () {
+  var twoMinutes = 60 * 2,
+      display = document.querySelector('#time');
+  startTimer(twoMinutes, display);
+};
