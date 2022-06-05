@@ -15,7 +15,6 @@
     color: black;
     margin-top: 400px;
     margin-left: -315px;
-    margin-right: ;
     width: 10vw;
     height: 10vh;
   }
@@ -23,11 +22,12 @@
   #time-reminder {
     display: flex;
     color: black;
-    margin-top: 150px;
+    margin-top: 205px;
     margin-left: -190px;
     margin-right: ;
     width: 10vw;
     height: 10vh;
+    padding-left: 55px;
   }
 /*Gradient background*/
   body {
@@ -43,7 +43,7 @@
     align-items: left;
    
   }
-  
+  /* body containers lights up based on correct or incorrect*/
   body.correct {
     color: green;
   }

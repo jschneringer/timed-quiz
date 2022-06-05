@@ -57,7 +57,7 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
-    startButton.innerText = 'Restart'
+    startButton.innerText = 'Submit Score'
     startButton.classList.remove('hide')
   }
 }
@@ -111,7 +111,7 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-//this is where you can modifies the time amount.
+
   var twoMinutes = 60 * 2,
       display = document.querySelector('#time');
   startTimer(twoMinutes, display);
